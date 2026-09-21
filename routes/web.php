@@ -1,11 +1,9 @@
 <?php
 
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return '<h1>Hello, world!</h1>';
-});
+Route::get('/', [HomeController::class, 'index']);
 
-Route::get('/about', function () {
-    return '<h1>About</h1>';
-});
+Route::get('/about', [AboutController::class, 'index']);
