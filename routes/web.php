@@ -7,3 +7,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/about', [AboutController::class, 'index']);
+
+Route::get('/hello/{name}', function (string $name) {
+    return '<h1>Hello, ' . $name . '!<h1>';
+});
