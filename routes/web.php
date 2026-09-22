@@ -27,3 +27,7 @@ Route::prefix('/app')->group(function () {
         return 'Customers!';
     })->name('app.customers');
 });
+
+Route::fallback(function () {
+    return view('not-found');
+});
