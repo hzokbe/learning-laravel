@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
 
+Route::redirect('/home', '/');
+
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 
 Route::get('/hello/{name}/{age}', function (string $name, int $age) {
