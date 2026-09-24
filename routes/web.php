@@ -3,6 +3,7 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\HelloController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
@@ -18,9 +19,7 @@ Route::get('/login', function () {
 })->name('login');
 
 Route::prefix('/app')->group(function () {
-    Route::get('/products', function () {
-        return 'Products!';
-    })->name('app.products');
+    Route::get('/products', [ProductController::class, 'index'])->name('app.products');
 
     Route::get('/customers', function () {
         return 'Customers!';
